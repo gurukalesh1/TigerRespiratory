@@ -29,7 +29,7 @@ bot = Client("bot",
 
 @bot.on_message(filters.command(["start"]))
 async def account_login(bot: Client, m: Message):
-    editable = await m.reply_text(f"HELLO I AM TXT DOWNLOADER BOT MADE BY TIGER BOSS [{m.from_user.first_name}](tg://user?id={m.from_user.id})\nPress /BOSS")
+    editable = await m.reply_text(f"HELLO I AM TXT DOWNLOADER BOT [{m.from_user.first_name}](tg://user?id={m.from_user.id})\n")
 
 
 @bot.on_message(filters.command("stop"))
@@ -38,7 +38,7 @@ async def restart_handler(_, m):
     os.execl(sys.executable, sys.executable, *sys.argv)
 
 
-@bot.on_message(filters.command(["Boss"]))
+@bot.on_message(filters.command(["testupld"]))
 async def account_login(bot: Client, m: Message):
     editable = await m.reply_text(f"**Hey [{m.from_user.first_name}](tg://user?id={m.from_user.id})\nSend txt file**")
     input: Message = await bot.listen(editable.chat.id)
@@ -155,7 +155,7 @@ async def account_login(bot: Client, m: Message):
              url =  "https://psitoffers.store/testkey.php?vid=" + id + "&quality=" + raw_text2
 
             name1 = links[i][0].replace("\t", "").replace(":", "").replace("/", "").replace("+", "").replace("#", "").replace("|", "").replace("@", "").replace("*", "").replace(".", "").replace("https", "").replace("http", "").strip()
-            name = f'{str(count).zfill(3)}) {name1[:60]}'
+            name = f'{str(count).zfill(3)})〔«𝙼𝚎𝚗𝚍𝚊𝚡»〕{name1[:60]}'
 
             if "youtu" in url:
                 ytf = f"b[height<={raw_text2}][ext=mp4]/bv[height<={raw_text2}][ext=mp4]+ba[ext=m4a]/b[ext=mp4]"
@@ -168,8 +168,8 @@ async def account_login(bot: Client, m: Message):
                 cmd = f'yt-dlp -f "{ytf}" "{url}" -o "{name}.mp4"'
 
             try:                               
-                cc = f'** {str(count).zfill(3)}.** {name1} ({res}) TIGER.mkv\n**Batch Name :** {b_name}\n\n**Downloaded by : {CR}**'
-                cc1 = f'** {str(count).zfill(3)}.** {name1} TIGER.pdf \n**Batch Name :**{b_name}\n\n**Downloaded by : {CR}**'
+                cc = f'** {str(count).zfill(3)}.** {name1} ({res})〔«𝙼𝚎𝚗𝚍𝚊𝚡»〕.mkv\n**Bᴀᴛᴄʜ Nᴀᴍᴇ »** `{b_name}`\n\n**Dᴏᴡɴʟᴏᴀᴅᴇᴅ Bʏ : {CR}**'
+                cc1 = f'** {str(count).zfill(3)}.** {name1}〔«𝙼𝚎𝚗𝚍𝚊𝚡»〕.pdf \n**Bᴀᴛᴄʜ Nᴀᴍᴇ »**`{b_name}`\n\n**Dᴏᴡɴʟᴏᴀᴅᴇᴅ Bʏ : {CR}**'
                 if "drive" in url:
                     try:
                         ka = await helper.download(url, name)
@@ -195,7 +195,7 @@ async def account_login(bot: Client, m: Message):
                         time.sleep(e.x)
                         continue
                 else:
-                    prog = await m.reply_text(f"**Downloading:-**\n\n** Video Name :-** `{name}\nQuality - {raw_text2}`\n**link:**`{url}`\n\n **bot made by TIGER ❤️**")
+                    prog = await m.reply_text(f"**Downloading:-**\n\n** Video Name :-** `{name}\nQuality - {raw_text2}`\n**link:**`{url}`\n\n **bot made by 𝐌𝐞𝐧𝐝𝐚𝐱™❤️**")
                     res_file = await helper.download_video(url, cmd, name)
                     filename = res_file
                     await prog.delete(True)
@@ -209,7 +209,7 @@ async def account_login(bot: Client, m: Message):
 
     except Exception as e:
         await m.reply_text(e)
-    await m.reply_text("🔰Done Boss🔰")
+    await m.reply_text("Done✅")
 
 
 bot.run()
