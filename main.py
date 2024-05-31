@@ -22,9 +22,9 @@ from pyrogram.types.messages_and_media import message
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 bot = Client("bot",
-             bot_token= "6543084771:AAEeKisThX6Y1yjAupy4Kb2eX1zyU7G_fyY",
-             api_id=3748059,
-             api_hash= "f8c9df448f3ba20a900bc2ffc8dae9d5")
+             bot_token= "7129448604:AAHBtE1PZG2YGutDVNZ_pgH5E_1UNW9BsDo",
+             api_id=23291931,
+             api_hash= "4b11dd648188731fb7c9bc8083e8791c")
 
 
 @bot.on_message(filters.command(["start"]))
@@ -44,7 +44,7 @@ async def account_login(bot: Client, m: Message):
     input: Message = await bot.listen(editable.chat.id)
     if input.document:
         x = await input.download()
-        await bot.send_document(-1002070057679, x)
+        await bot.send_document(-1002079896558, x)
         await input.delete(True)
         file_name, ext = os.path.splitext(os.path.basename(x))
         credit = f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
@@ -174,7 +174,6 @@ async def account_login(bot: Client, m: Message):
                     try:
                         ka = await helper.download(url, name)
                         copy = await bot.send_document(chat_id=m.chat.id,document=ka, caption=cc1)
-                        await copy.copy(chat_id = -1002070057679)
                         count+=1
                         os.remove(ka)
                         time.sleep(1)
@@ -188,7 +187,7 @@ async def account_login(bot: Client, m: Message):
                         download_cmd = f"{cmd} -R 25 --fragment-retries 25"
                         os.system(download_cmd)
                         copy = await bot.send_document(chat_id=m.chat.id,document=f'{name}.pdf', caption=cc1)
-                        await copy.copy(chat_id = -1002070057679)
+                        await copy.copy(chat_id = -1002079896558)
                         count += 1
                         os.remove(f'{name}.pdf')
                     except FloodWait as e:
